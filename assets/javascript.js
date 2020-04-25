@@ -1,15 +1,3 @@
-// timer variables
-
-var minutesDisplay = document.querySelector("#minutes");
-var secondsDisplay = document.querySelector("#seconds");
-// let secondsDisplay = document.getElementById("#seconds");
-let interval;
-var totalSeconds = 0;
-var secondsElapsed = 0;
-
-
-
-
 //quiz variables
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
@@ -43,9 +31,16 @@ const questions = [
         text: "A variable inside of a variable inside of a function",
         correct: false,
       },
-      { text: "Your favorite color", correct: false },
+      // { text: "Your favorite color", correct: false },
       { text: "Represents one of two values: true or false", correct: true },
-      { text: "A way to make your code look awesome!", correct: false },
+      // { text: "A way to make your code look awesome!", correct: false },
+    ],
+  },
+  {
+    question: "Will coding ever get easier?",
+    answers:[
+      {text: "Probably not", correct: false},
+      {text: "Yes practice makes perfect, dont give up!", correct:true },
     ],
   },
 ];
@@ -63,6 +58,7 @@ function startGame() {
   currentQuestionIndex = 0;
   questionContainerElement.classList.remove("hide");
   setNextQuestion();
+  count();
 }
 
 function setNextQuestion() {
@@ -101,6 +97,7 @@ function selectAnswer(e) {
   if (randomQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove("hide");
   } else {
+
     startButton.innerText = "Restart";
     startButton.classList.remove("hide");
   }
@@ -111,10 +108,12 @@ function setStatusClass(element, correct) {
   clearStatusClass(element);
   if (correct) {
     element.classList.add("correct");
-  } else  {
-    counter -=1;
+  } 
+  
+  else if(element!=correct) {
     element.classList.add("wrong");
-  }
+    counter -=5
+  } 
 
 }
 
@@ -123,10 +122,11 @@ function clearStatusClass(element) {
   element.classList.remove("wrong");
 }
 
+
 //timer functions
 
 var counter = 60;
-setInterval(function(){
+function count (){setInterval(function(){
     counter--;
     if(counter>= 0){
         id=document.getElementById("minutes");
@@ -134,8 +134,13 @@ setInterval(function(){
     }
     if(counter==0){
       alert('You Failed');
-    }
     
+    }
+  
 },1000);
+
+}
+
+
 
   
