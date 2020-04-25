@@ -19,7 +19,7 @@ const questions = [
       { text: "a collection of variables of the same type.", correct: true },
       {
         text:
-          "sequence of instruction s that is continually repeated until a certain condition is reached",
+          "sequence of instructions that is continually repeated until a certain condition is reached",
         correct: false,
       },
     ],
@@ -31,16 +31,21 @@ const questions = [
         text: "A variable inside of a variable inside of a function",
         correct: false,
       },
-      // { text: "Your favorite color", correct: false },
       { text: "Represents one of two values: true or false", correct: true },
-      // { text: "A way to make your code look awesome!", correct: false },
     ],
   },
   {
     question: "Will coding ever get easier?",
-    answers:[
-      {text: "Probably not", correct: false},
-      {text: "Yes practice makes perfect, dont give up!", correct:true },
+    answers: [
+      { text: "Probably not", correct: false },
+      { text: "Yes practice makes perfect, dont give up!", correct: true },
+    ],
+  },
+  {
+    question: "What does HTML stand for?",
+    answers: [
+      { text: "Hypertext Markup Language", correct: true },
+      { text: "Hyperbolic Time Chamber" },
     ],
   },
 ];
@@ -97,24 +102,21 @@ function selectAnswer(e) {
   if (randomQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove("hide");
   } else {
-
     startButton.innerText = "Restart";
     startButton.classList.remove("hide");
   }
   nextButton.classList.remove("hide");
 }
-
+// buttons change color and secs get + or -
 function setStatusClass(element, correct) {
   clearStatusClass(element);
   if (correct) {
     element.classList.add("correct");
-  } 
-  
-  else if(element!=correct) {
+    counter += 5;
+  } else if (element != correct) {
     element.classList.add("wrong");
-    counter -=5
-  } 
-
+    counter -= 5;
+  }
 }
 
 function clearStatusClass(element) {
@@ -122,25 +124,38 @@ function clearStatusClass(element) {
   element.classList.remove("wrong");
 }
 
-
 //timer functions
 
 var counter = 60;
-function count (){setInterval(function(){
+function count(correct) {
+  setInterval(function () {
     counter--;
-    if(counter>= 0){
-        id=document.getElementById("minutes");
-        id.innerHTML = counter;
+    if (counter >= 0) {
+      id = document.getElementById("minutes");
+      id.innerHTML = counter;
     }
-    if(counter==0){
-      alert('You Failed');
-    
+    if (counter == 0) {
+      alert("You Failed");
     }
-  
-},1000);
-
+  }, 1000);
 }
 
+//intials to local storage code
+var submitButton = document.querySelector("#submit");
+
+submitButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  var name = document.querySelector("#name").value;
+
+  if (name === "") {
+    alert("Error", "name can not be blank");
+  } else {
+    alert("You Win!");
+
+    localStorage.setItem("name", name);
+  }
+});
 
 
-  
+    
+

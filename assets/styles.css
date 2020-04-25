@@ -1,106 +1,105 @@
-*, *::before, *::after{
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.timer{
-    background: #333;
-        color: #fff;
-        padding: 10px;
-        border-bottom: 4px #000 solid;
-        margin-bottom: 10px;
-        width: 800px;
-        max-width: 20%;
-        border-radius: 5px;
-        box-shadow: 0 0 10px 2px;
-        justify-content: center;
-        align-items: center;
-        object-position: center;
-        font-size: 3rem;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
+.timer {
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  border-bottom: 4px #000 solid;
+  margin-bottom: 10px;
+  width: 800px;
+  max-width: 20%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px;
+  justify-content: center;
+  align-items: center;
+  object-position: center;
+  font-size: 3rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.timer #minutes, .timer #seconds{
-    display: inline-block;
+.timer #minutes {
+  display: inline-block;
 }
 
-.title{
-    color:white;
+.title {
+  color: white;
 }
 
-
-body{
-    justify-content: center;
-    align-items: center;
-    background-color: darkslateblue;
-    
-  } 
-
-  .container{
-      width: 800px;
-      max-width: 80%;
-      background-color:honeydew;
-      border-radius: 5px;
-      padding: 10px;
-      box-shadow: 0 0 10px 2px;
-      background-position: center;
-      margin-left: auto;
-      margin-right: auto;
-      font-weight: bold;
-     
-    
-  }
-  .btn-grid{
-      display:grid;
-      grid-template-columns: repeat(2, auto);
-      gap: 10px;
-      margin: 20px 0;
-      justify-content: center;
-  }
-
-  .btn {
-      border: 1px solid black;
-      border-radius: 5px;
-      background-color:white;
-      padding: 5px 10px;
-      color: black;
-      outline: none;
-      font-size: 18px;
-
-  }
-
-  .btn:hover{
-      border-color:black;
+body {
+  justify-content: center;
+  align-items: center;
+  background-color: darkslateblue;
 }
 
-.start-btn, .next-btn{
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 10px 20px;
+.container {
+  width: 800px;
+  max-width: 80%;
+  background-color: honeydew;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px;
+  background-position: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+}
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
+  justify-content: center;
+}
+
+.btn {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  padding: 5px 10px;
+  color: black;
+  outline: none;
+  font-size: 18px;
+}
+
+.btn:hover {
+  border-color: black;
+}
+
+.start-btn,
+.next-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
 }
 
 .controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .hide {
-    display: none;
+  display: none;
 }
 
-.btn.wrong{
-    background-color: red;
-    color: white;
+.btn.wrong {
+  background-color: red;
+  color: white;
 }
 
-.btn.correct{
-    background-color:dodgerblue;
+.btn.correct {
+  background-color: dodgerblue;
 }
-.my-form{
-    color:white;
-    font-weight: bold;
+.my-form {
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
