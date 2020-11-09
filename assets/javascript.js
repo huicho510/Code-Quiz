@@ -57,7 +57,6 @@ nextButton.addEventListener("click", () => {
 });
 
 function startGame() {
-  console.log("Started");
   startButton.classList.add("hide");
   randomQuestions = questions.sort(() => Math.random() - 0.5);
   currentQuestionIndex = 0;
@@ -126,8 +125,8 @@ function clearStatusClass(element) {
 
 //timer functions
 
-var counter = 60;
-function count(correct) {
+let counter = 60;
+function count() {
   setInterval(function () {
     counter--;
     if (counter >= 0) {
@@ -141,11 +140,11 @@ function count(correct) {
 }
 
 //intials to local storage code
-var submitButton = document.querySelector("#submit");
+let submitButton = document.querySelector("#submit");
 
 submitButton.addEventListener("click", function (event) {
   event.preventDefault();
-  var name = document.querySelector("#name").value;
+ let name = document.querySelector("#name").value;
 
   if (name === "") {
     alert("Error", "name can not be blank");
